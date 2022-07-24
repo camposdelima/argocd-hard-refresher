@@ -33,4 +33,4 @@ jobs:
           # Github Repo Owner to deploy to
           gh-repo-owner: "$GITHUB_ACTOR" # optional
           # the directory path to the specified chart
-          #chart-path: 
+          chart-path: "."
