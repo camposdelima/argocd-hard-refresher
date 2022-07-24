@@ -5,6 +5,10 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 If release name contains chart name it will be used as a full name.
 */}}
 {{- define "fullname" -}}
+{{- kebabcase ( include "fullname-raw" . ) -}}
+{{- end -}}
+
+{{- define "fullname-raw" -}}
 {{- if .Values.fullnameOverride -}}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
 {{- else -}}
