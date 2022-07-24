@@ -23,8 +23,14 @@ jobs:
     #   uses: helm/chart-releaser-action@v1.1.0
     #   env:
     #     CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      - uses: J12934/helm-gh-pages-action@master
+      - name: Package Helm GHCR
+        # You may pin to the exact commit or the version.
+        # uses: explorium-ai/package-helm-ghcr-action@60069b348ae635066398746368176daa56a06956
+        uses: explorium-ai/package-helm-ghcr-action@v1.0.0
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
-          charts-folder: ""
-          deploy-branch: "gh-pages"
+          # Github token to authenticate to Repo
+          gh-token: "${{ secrets.GITHUB_TOKEN }}"
+          # Github Repo Owner to deploy to
+          #gh-repo-owner: # optional
+          # the directory path to the specified chart
+          #chart-path: 
