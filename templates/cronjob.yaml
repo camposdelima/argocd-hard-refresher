@@ -13,7 +13,7 @@ spec:
         spec:
           restartPolicy: Never
           containers:
-          - name: annotatations-supervisor
+          - name: annotator
             image: 'kubesphere/kubectl:v1.0.0'
             env:
             - name: APPLICATION_NAME

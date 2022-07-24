@@ -1,6 +1,6 @@
 apiVersion: v2
 name: argocd-hard-refresher
-description: A chart for enable hard-refresh to a umbrella chart applications in ArgoCD or target another application.
+description: A chart to enable hard-refresh to an umbrella chart applications in ArgoCD or target to another ArgoCD application.
 type: application
-version: 0.1.0
-appVersion: "0.1.0"
+version: 0.1.1
+appVersion: "0.1.1"

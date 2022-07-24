@@ -1,2 +1,2 @@
 # argocd-hard-refresher
-A chart for enable hard-refresh to a umbrella chart applications in ArgoCD or target another application.
+A chart to enable hard-refresh to an umbrella chart applications in ArgoCD or target to another ArgoCD application. 
