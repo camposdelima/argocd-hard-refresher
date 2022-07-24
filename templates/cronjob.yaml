@@ -1,0 +1,24 @@
+kind: CronJob
+apiVersion: batch/v1
+metadata:
+  name: {{ include "fullname" . }}-cronjob
+spec:
+  schedule: {{ .Values.schedule | quote }}
+  concurrencyPolicy: Replace
+  jobTemplate:
+    spec:
+      activeDeadlineSeconds: 60
+      backoffLimit: 1
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+          - name: annotatations-supervisor
+            image: 'kubesphere/kubectl:v1.0.0'
+            env:
+            - name: APPLICATION_NAME
+              value: {{ default .Release.Name .Values.applicationName}}
+            command: ["/bin/sh","-c"]
+            args:
+            - >-
+              kubectl annotate applications $APPLICATION_NAME -n argocd argocd.argoproj.io/refresh=hard
