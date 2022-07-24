@@ -31,6 +31,6 @@ jobs:
           # Github token to authenticate to Repo
           gh-token: "${{ secrets.GITHUB_TOKEN }}"
           # Github Repo Owner to deploy to
-          gh-repo-owner: "$GITHUB_ACTOR" # optional
+          gh-repo-owner: $GITHUB_ACTOR # optional
           # the directory path to the specified chart
           #chart-path: "."
